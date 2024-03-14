@@ -213,13 +213,16 @@ private void removeUser() {
             if (user.getUserID() == userID) {
                 userFound = true;
                 if (user.getBorrowedBooks() == null || user.getBorrowedBooks().isEmpty()) {
-                    JOptionPane.showMessageDialog(null, "User has borrowed book(s)");
+                     library.removeUser(user);
+                    JOptionPane.showMessageDialog(null, "User removed successfully");
                    
                     break; 
                 } else {
                     library.removeUser(user);
                     JOptionPane.showMessageDialog(null, "User removed successfully");
+                    JOptionPane.showMessageDialog(null, "User has borrowed book(s)");
                     break; 
+                    
                     
                 }
             }
